@@ -1,0 +1,249 @@
+<head>
+
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js">
+
+    //function handleClick() {
+
+    //            count *= 2;
+
+    //}         
+
+    </script>
+
+</head>
+
+<script>
+
+    function getTotal(attribute, racialBonus)
+
+                    {
+
+                                    return attribute + racialBonus;
+
+                    };
+
+    function getPoints(attribute)
+
+    {
+
+                    if (attribute == 15 ) {
+
+                                    return 9;
+
+                    }
+
+                    else if  (attribute == 14) {
+
+                                    return 7;
+
+                    }
+
+                    else return attribute - 8;
+
+    };
+
+   
+
+   
+
+    let str = 8;
+
+    let strrb = 0;
+
+    $: strtotal = getTotal(str, strrb);
+
+    $: strPoints = getPoints(str);
+
+let dex = 8;
+
+    let dexrb = 0;
+
+let dexPoints;
+
+    $: dextotal = getTotal(dex, dexrb);
+
+    $: dexPoints = getPoints(dex);
+
+    let con = 8;
+
+    let conrb = 0;
+
+let conPoints;
+
+    $: contotal = getTotal(con, conrb);
+
+    $: conPoints = getPoints(con);
+
+                    let intel = 8;
+
+    let intelrb = 0;
+
+let intelPoints;
+
+    $: inteltotal = getTotal(intel, intelrb);
+
+    $: intelPoints =getPoints(intel);
+
+                    let wis = 8;
+
+    let wisrb = 0;
+
+let wisPoints;
+
+    $: wistotal = getTotal(wis, wisrb);
+
+    $: wisPoints =getPoints(wis);
+
+                    let cha = 8;
+
+    let charb = 0;
+
+let chaPoints;
+
+    $: chatotal = getTotal(cha, charb);
+
+    $: chaPoints =getPoints(cha);
+
+    $: points = 27-strPoints-dexPoints-conPoints-intelPoints-wisPoints-chaPoints
+
+</script>
+
+
+
+
+
+<table>
+
+    <tr  style="font-weight:bold;">
+
+                    <th valign = "bottom">Attribute</th>
+
+                    <th valign = "bottom">Base</th>
+
+                    <th valign = "bottom">Racial<br/>Bonus</th>
+
+                    <th valign = "bottom">Points</th>
+
+                    <th valign = "bottom">Total</th>
+
+    </tr>
+
+    <tr >
+
+                    <td>STR</td>
+
+                    <td>
+
+                                    <input style="width: 50px; text-align:center" max="15" min="8" type=number bind:value={str}>
+
+                    </td>
+
+                    <td><input style="width: 50px; text-align:center" max="2" min="0" type=number bind:value={strrb}></td>
+
+                    <td>{strPoints}</td>
+
+                    <td>{strtotal}</td>
+
+    </tr>
+
+    <tr >
+
+                    <td>DEX</td>
+
+                    <td>
+
+                                    <input style="width: 50px; text-align:center" max="15" min="8" type=number bind:value={dex}>
+
+                    </td>
+
+                    <td><input style="width: 50px; text-align:center" max="2" min="0" type=number bind:value={dexrb}></td>
+
+                    <td>{dexPoints}</td>
+
+                    <td>{dextotal}</td>
+
+    </tr>
+
+    <tr >
+
+                    <td>CON</td>
+
+                    <td>
+
+                                    <input style="width: 50px; text-align:center" max="15" min="8" type=number bind:value={con}>
+
+                    </td>
+
+                    <td><input style="width: 50px; text-align:center" max="2" min="0" type=number bind:value={conrb}></td>
+
+                    <td>{conPoints}</td>
+
+                    <td>{contotal}</td>
+
+    </tr>
+
+    <tr >
+
+                    <td>INT</td>
+
+    <td>
+
+                                    <input style="width: 50px; text-align:center" max="15" min="8" type=number bind:value={intel}>
+
+                    </td>
+
+                    <td><input style="width: 50px; text-align:center" max="2" min="0" type=number bind:value={intelrb}></td>
+
+                    <td>{intelPoints}</td>
+
+                    <td>{inteltotal}</td>
+
+    </tr>
+
+    <tr >
+
+                    <td>WIS</td>
+
+                    <td>
+
+                                    <input style="width: 50px; text-align:center" max="15" min="8" type=number bind:value={wis}>
+
+                    </td>
+
+                    <td><input style="width: 50px; text-align:center" max="2" min="0" type=number bind:value={wisrb}></td>
+
+                    <td>{wisPoints}</td>
+
+                    <td>{wistotal}</td>
+
+    </tr>
+
+    <tr >
+
+                    <td>CHA</td>
+
+<td>
+
+                                    <input style="width: 50px; text-align:center" max="15" min="8" type=number bind:value={cha}>
+
+                    </td>
+
+                    <td><input style="width: 50px; text-align:center" max="2" min="0" type=number bind:value={charb}></td>
+
+                    <td>{chaPoints}</td>
+
+                    <td>{chatotal}</td>
+
+    </tr>
+
+                    <tr style="font-weight: bold" >
+
+                    <td></td>
+
+                    <td colspan = "3" align = "right">Points Remaining: </td>
+
+                    <td>{points}</td>
+
+    </tr>
+
+</table>             
